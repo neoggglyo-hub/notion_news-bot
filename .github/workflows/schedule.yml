@@ -1,0 +1,29 @@
+name: Daily News to Notion
+
+on:
+  schedule:
+    # 한국 시간(KST) 월~금 오전 8시는 세계표준시(UTC)로 일~목 오후 11시입니다. (0 23 * * 0-4)
+    - cron: '0 23 * * 0-4'
+  workflow_dispatch: # 수동으로 실행해볼 수 있는 버튼 생성
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 코드 불러오기
+        uses: actions/checkout@v3
+
+      - name: 파이썬 설치하기
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 필요한 파이썬 패키지 설치
+        run: |
+          pip install requests feedparser pytz
+
+      - name: 파이썬 뉴스봇 실행!
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: python main.py
