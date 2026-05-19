@@ -45,10 +45,12 @@ def add_to_notion(title, link, category):
         print(f"실패: {response.text}")
 
 def fetch_news():
-    # 구글 뉴스 RSS 주소 (경제, 시사/정치)
+    # 4가지 카테고리의 구글 뉴스 RSS 주소
     feeds = {
         "경제": "https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ko&gl=KR&ceid=KR:ko",
-        "시사": "https://news.google.com/rss/headlines/section/topic/NATION?hl=ko&gl=KR&ceid=KR:ko"
+        "시사": "https://news.google.com/rss/headlines/section/topic/NATION?hl=ko&gl=KR&ceid=KR:ko",
+        "세계": "https://news.google.com/rss/headlines/section/topic/WORLD?hl=ko&gl=KR&ceid=KR:ko",
+        "제약": "https://news.google.com/rss/search?q=제약&hl=ko&gl=KR&ceid=KR:ko"
     }
 
     for category, url in feeds.items():
