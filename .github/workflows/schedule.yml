@@ -3,7 +3,7 @@ name: Daily News to Notion
 on:
   schedule:
     # 한국 시간(KST) 월~금 오전 8시는 세계표준시(UTC)로 일~목 오후 11시입니다. (0 23 * * 0-4)
-    - cron: '45 22 * * 0-4'
+    - cron: '0 22 * * 0-4'
   workflow_dispatch: # 수동으로 실행해볼 수 있는 버튼 생성
 
 jobs:
