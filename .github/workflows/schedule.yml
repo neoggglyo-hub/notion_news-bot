@@ -2,8 +2,8 @@ name: Daily News to Notion
 
 on:
   schedule:
-    # 깃허브 트래픽을 피하기 위해 22시 17분(한국 시간 오전 7시 17분)으로 설정!
-    - cron: '17 22 * * 0-4'
+    # 매일(월~일) 한국 시간 오전 7시 17분에 실행 (UTC 기준 22시 17분)
+    - cron: '17 22 * * *'
   workflow_dispatch:
 
 jobs:
