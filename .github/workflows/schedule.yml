@@ -2,8 +2,8 @@ name: Daily News to Notion
 
 on:
   schedule:
-    # 매일(월~일) 한국 시간 오전 5시 17분에 실행 (UTC 기준 22시 17분)
-    - cron: '17 20 * * *'
+    # 매일(월~일) 한국 시간 오전 4시 17분에 실행 (UTC 기준 19시 17분)
+    - cron: '17 19 * * *'
   workflow_dispatch:
 
 jobs:
